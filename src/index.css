@@ -1,13 +1,115 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+:root {
+  --primary-clr: #170F99;
+  --secondary-clr: #D0CEF2;
+  --on-primary-clr: #ffffff;
+  --surface-clr: #ffffff;
+  --on-surface-clr: #333333;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+p, h1 {margin: 0;}
+a {text-decoration: none; color: #FFE370;}
+
+/* Header */
+
+.header {
+  padding-top: 2.625rem;
+  background-color: var(--primary-clr);
+}
+
+.surface {
+  background-color: var(--on-primary-clr);
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 3.25rem;
+  font-weight: 500;
+  margin-bottom: 1.5625rem;
+}
+
+.header p {
+  font-size: 1.875rem;
+  font-weight: 500;
+  margin: 0 .875rem 2.1875rem .875rem;
+}
+
+.image img {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  position: relative;
+  top: -1.8125rem;
+  background-color: var(--on-primary-clr);
+  -webkit-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.25); 
+  box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.25);
+}
+
+/* Accordion */
+
+.accordion__btn {
+  width: 100%;
+  border: none;
+  padding: 0.8125rem 2.125rem;
+  text-align: left;
+  font-size: 1.125rem;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--primary-clr);
+  color: var(--on-primary-clr);
+}
+
+.chevron {
+  float: right;
+}
+
+.chevron svg {
+  fill: var(--on-primary-clr);
+  width: 22px;
+  height: 22px;
+  vertical-align: top;
+}
+
+.accordion__collapse {
+  padding: .9375rem;
+  font-size: 1.25rem;
+  display: none;
+}
+
+/* Active */
+
+.accordion__item--active 
+.accordion__btn {
+  background-color: var(--secondary-clr);
+  color: var(--on-surface-clr);
+  font-weight: 600;
+}
+
+.accordion__item--active
+.chevron svg {
+  fill: var(--on-surface-clr);
+  transform: rotate(180deg);
+}
+
+.accordion__item--active
+.accordion__collapse {
+  display: block;
+}
+
+/* Footer */
+
+footer {
+  font-size: .75rem;
+  padding: 1.4375rem;
+  text-align: center;
+  background-color: #0F0A66;
+  color: var(--on-primary-clr);
 }
